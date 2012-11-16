@@ -1,5 +1,4 @@
 
-import java.util.HashSet;
 
 /*
  * To change this template, choose Tools | Templates
@@ -14,17 +13,22 @@ public class Test {
     
     public static void main(String[] args) {
         
-        String a = "abc";
-        Integer x = 3;
-        Character c = 'X';
+        String a = "a";
+        Integer b = 2;
+        Character c = 'c';
+        String d = "d";
         
         Set set = new Set();
         set.insert(a);
-        set.insert(x);
+        set.insert(b);
         set.insert(c);
+        set.insert(d);
         Iterator it = set.iterator();
-        System.out.println(it.next());
-        System.out.println(it.next());
-        System.out.println(it.next());
+
+        
+        
+        while(it.hasNext()) {
+            System.out.println(it.next());
+        }
     }
 }
