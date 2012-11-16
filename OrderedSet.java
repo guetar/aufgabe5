@@ -4,6 +4,7 @@
  * @author guetar
  */
 public class OrderedSet<S extends Shorter> extends Set {
+    
     private OrderedNode head;
     
     @Override

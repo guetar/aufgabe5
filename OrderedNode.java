@@ -7,6 +7,7 @@ public class OrderedNode<S extends Shorter> extends Node<S> {
     
     private S elem;
     private OrderedNode<S> next;
+    private OrderedNode<S> prev;
     
     public OrderedNode(S elem) {
         super(elem);
