@@ -19,26 +19,10 @@ public class Node<S> {
     }
 
     public void insert(S elemIns) {
-        if (elem != null) {
-            if (next != null) {
-                next.insert(elemIns);
-            } else {
-                next = new Node(elemIns);
-            }
+        if (next != null) {
+            next.insert(elemIns);
         } else {
-            elem = elemIns;
+            next = new Node(elemIns);
         }
-    }
-    
-    public boolean hasNext() {
-        return (next != null);
-    }
-    
-    public Node getNext() {
-        return next;
-    }
-    
-    public S getElem() {
-        return elem;
     }
 }

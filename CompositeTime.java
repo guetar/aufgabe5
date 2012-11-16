@@ -12,14 +12,14 @@ public class CompositeTime<S extends CompositeTime> extends ElapsedTime {
     }
     
     public boolean shorter(S s) {
-        return sum() < s.getTime();
+        return sum() < s.sum();
     }
     
     public int count() {
         return times.length;
     }
     
-    private double sum() {
+    public double sum() {
         double s = 0;
         
         for(double t : times) {

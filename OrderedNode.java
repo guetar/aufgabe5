@@ -3,19 +3,28 @@
  *
  * @author guetar
  */
-public class OrderedNode<S> extends Node<S> {
+public class OrderedNode<S extends Shorter> {
     
-    public OrderedNode(Class<S> elem) {
-        super(elem);
+    private S elem;
+    private OrderedNode<S> next;
+    
+    public OrderedNode() {
+        elem = null;
+        next = null;
     }
 
-    public void insertOrdered(S elemIns) {
-        OrderedNode next = (OrderedNode) getNext();
-        
-        if (next != null && next.getElem().shorter(elemIns)) {
-            next.insertOrdered(elemIns);
+    public OrderedNode(S elem) {
+        this.elem = elem;
+        this.next = null;
+    }
+    
+    public void insert(S elemIns) {
+        if(next != null && next.elem.shorter(elemIns)) {
+            next.insert(elemIns);
         } else {
-            next.setNext(elemIns);
+            OrderedNode helper = next;
+            next = new OrderedNode(elemIns);
+            next.next = helper;
         }
     }
 }
