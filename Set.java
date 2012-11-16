@@ -6,7 +6,7 @@ import java.util.Iterator;
  * @author guetar
  */
 public abstract class Set<S> implements Iterable<S> {
-    private S head;
+    private Node head;
 
     private class Node {
         private S elem;
@@ -48,7 +48,7 @@ public abstract class Set<S> implements Iterable<S> {
     }
     
  
-    public boolean insert(S s) {
-        
+    public void insert(S s) {
+        head.insert(s);
     }
 }
