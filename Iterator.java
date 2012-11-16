@@ -11,18 +11,25 @@ public class Iterator<S> implements java.util.Iterator<S> {
 
     @Override
     public boolean hasNext() {
-        return pos.hasNext();
+        return pos != null;
     }
 
     @Override
     public S next() {
-        pos = pos.getNext();
-        S s = pos.getElem();
-        return s;
+        if (hasNext()) {
+            S s = pos.getElem();
+            pos = pos.getNext();
+            return s;
+        }
+        return null;
     }
 
     @Override
     public void remove() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Node<S> next = pos.getNext();
+        Node<S> prev = pos.getPrev();
+        if (next != null && prev != null) {
+            
+        }
     }
 }

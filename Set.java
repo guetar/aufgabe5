@@ -5,7 +5,11 @@
  * @author guetar
  */
 public class Set<S> implements Iterable<S> {
-    private Node head;
+    private Node<S> head;    
+    
+    public Set () {
+        head = null;
+    }
     
     @Override
     public Iterator<S> iterator() {
@@ -13,7 +17,7 @@ public class Set<S> implements Iterable<S> {
     }
  
     public void insert(S s) {
-        if(head == null) {
+        if (head == null) {
             head = new Node(s);
         } else {
             head.insert(s);
