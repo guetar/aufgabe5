@@ -3,21 +3,16 @@
  *
  * @author guetar
  */
-public class OrderedNode<S extends Shorter> {
+public class OrderedNode<S extends Shorter> extends Node<S> {
     
     private S elem;
     private OrderedNode<S> next;
     
-    public OrderedNode() {
-        elem = null;
-        next = null;
-    }
-
     public OrderedNode(S elem) {
-        this.elem = elem;
-        this.next = null;
+        super(elem);
     }
     
+    @Override
     public void insert(S elemIns) {
         if(next != null && next.elem.shorter(elemIns)) {
             next.insert(elemIns);

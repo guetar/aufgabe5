@@ -6,13 +6,14 @@
 public class OrderedSet<S extends Shorter> extends Set {
     private OrderedNode head;
     
-    public Iterator iterator() {
-        
+    @Override
+    public Iterator<S> iterator() {
+        return new Iterator<S>(head);
     }
     
-    public boolean insert(S s) {
+    public void insert(S s) {
         if(head == null) {
-            head = new Node(s);
+            head = new OrderedNode(s);
         } else {
             head.insert(s);
         }

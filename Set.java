@@ -9,7 +9,7 @@ public class Set<S> implements Iterable<S> {
     
     @Override
     public Iterator<S> iterator() {
-        return new Iterator(head);
+        return new Iterator<S>(head);
     }
  
     public void insert(S s) {
