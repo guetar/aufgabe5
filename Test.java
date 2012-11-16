@@ -1,16 +1,30 @@
 
+import java.util.HashSet;
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 /**
  *
- * @author guetar
+ * @author steff
  */
 public class Test {
     
-    Description a = new Description("Descriptions are for lulus.");
-    Description b = new Description("So are books.");
-    Description c = new Description("Another one bites the dust.");
-    
-    OrderedSet oSet = new OrderedSet();
-    oSet.add(a);
-    oSet.add(b);
-    oSet.add(c);
+    public static void main(String[] args) {
+        
+        String a = "abc";
+        Integer x = 3;
+        Character c = 'X';
+        
+        Set set = new Set();
+        set.insert(a);
+        set.insert(x);
+        set.insert(c);
+        Iterator it = set.iterator();
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+    }
 }
