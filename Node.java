@@ -7,10 +7,12 @@ public class Node<S> {
 
     private S elem;
     private Node<S> next;
+    private Node<S> prev;
     
     public Node() {
         elem = null;
         next = null;
+        prev = null;
     }
 
     public Node(S elem) {
@@ -19,14 +21,11 @@ public class Node<S> {
     }
 
     public void insert(S elemIns) {
-        if (elem != null) {
-            if (next != null) {
-                next.insert(elemIns);
-            } else {
-                next = new Node(elemIns);
-            }
+        if (next != null) {
+            next.insert(elemIns);
         } else {
-            elem = elemIns;
+            next = new Node(elemIns);
+            next.setPrev(this);
         }
     }
     
@@ -34,11 +33,25 @@ public class Node<S> {
         return (next != null);
     }
     
-    public Node getNext() {
+    public Node<S> getNext() {
         return next;
+    }
+    
+    public void setNext(Node<S> nextN) {
+        next = nextN;
+    }
+    
+    public Node<S> getPrev() {
+        return prev;
+    }
+    
+    private void setPrev(Node<S> prevN) {
+        prev = prevN;
     }
     
     public S getElem() {
         return elem;
     }
+
+   
 }
