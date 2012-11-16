@@ -3,7 +3,7 @@
  *
  * @author guetar
  */
-public class Description<S extends Description> extends Shorter<S> {
+public class Description<S extends Description> implements Shorter<S> {
 
     private String text;
 

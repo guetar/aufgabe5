@@ -3,7 +3,7 @@
  *
  * @author guetar
  */
-public class ElapsedTime<S extends ElapsedTime> extends Shorter<S> {
+public class ElapsedTime<S extends ElapsedTime> implements Shorter<S> {
 
     private int time;
 
