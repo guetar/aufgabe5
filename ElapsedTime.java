@@ -3,7 +3,7 @@
  *
  * @author guetar
  */
-public class ElapsedTime<S extends ElapsedTime> implements Shorter<S> {
+public class ElapsedTime<S extends ElapsedTime> extends Shorter<S> {
 
     private int time;
 
@@ -30,5 +30,10 @@ public class ElapsedTime<S extends ElapsedTime> implements Shorter<S> {
     
     public int getTime() {
         return time;
+    }
+    
+    @Override
+    public String toString() {
+        return getHour() + ":" + getMinutes() + ":" + getSeconds();
     }
 }
