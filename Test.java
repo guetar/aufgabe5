@@ -30,5 +30,21 @@ public class Test {
         while(it.hasNext()) {
             System.out.println(it.next());
         }
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+        
+        Description blah = new Description("blah");
+        Description buhu = new Description("buhuludubudulu");
+        Description baeh = new Description("Ich bin ein Poltergeist!");
+        
+        OrderedSet oSet = new OrderedSet();
+        oSet.insert(blah);
+        oSet.insert(buhu);
+        oSet.insert(baeh);
+        Iterator is = oSet.iterator();
+        System.out.println(is.next());
+        System.out.println(is.next());
+        System.out.println(is.next());
     }
 }
