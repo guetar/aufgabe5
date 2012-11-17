@@ -5,7 +5,7 @@
  */
 public class OrderedSet<S extends Shorter> extends Set {
     
-    private OrderedNode head;
+    private OrderedNode<S> head;
     
     @Override
     public Iterator<S> iterator() {
@@ -15,6 +15,11 @@ public class OrderedSet<S extends Shorter> extends Set {
     public void insert(S s) {
         if(head == null) {
             head = new OrderedNode(s);
+        } else if(s.shorter(head.getElem())) {
+            OrderedNode helper = new OrderedNode(head.getElem());
+            head = new OrderedNode(s);
+            head.setNext(helper);
+            helper.setPrev(head);
         } else {
             head.insert(s);
         }

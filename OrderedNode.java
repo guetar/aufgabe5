@@ -10,7 +10,7 @@ public class OrderedNode<S extends Shorter> extends Node<S> {
     private OrderedNode<S> prev;
     
     public OrderedNode(S elem) {
-        super(elem);
+        this.elem = elem;
     }
     
     @Override
@@ -22,18 +22,28 @@ public class OrderedNode<S extends Shorter> extends Node<S> {
         this.next = nextN;
     }
     
+    public void setPrev(OrderedNode<S> prevN) {
+        this.prev = prevN;
+    }
+    
+    public S getElem() {
+        return elem;
+    }
+    
     @Override
     public void insert(S elemIns) {
-        if(next != null && next.elem != null) {
-            if(next.elem.shorter(elemIns)) {
+        if (next != null) {
+            if (next.getElem().shorter(elemIns)) {
                 next.insert(elemIns);
             } else {
-                OrderedNode<S> helper = getNext();
+                OrderedNode<S> helper = new OrderedNode(next.getElem());
                 next = new OrderedNode(elemIns);
+                next.setPrev(this);
                 next.setNext(helper);
             }
         } else {
             next = new OrderedNode(elemIns);
+            next.setPrev(this);
         }
     }
 }
