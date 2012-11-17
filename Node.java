@@ -28,7 +28,7 @@ public class Node<S> {
             next.setPrev(this);
         }
     }
-
+  
     public boolean hasNext() {
         return (next != null);
     }
@@ -45,7 +45,7 @@ public class Node<S> {
         return prev;
     }
 
-    private void setPrev(Node<S> prevN) {
+    public void setPrev(Node<S> prevN) {
         prev = prevN;
     }
 

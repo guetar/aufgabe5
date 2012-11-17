@@ -5,7 +5,7 @@
  */
 public class OrderedSet<S extends Shorter> extends Set {
     
-    private OrderedNode head;
+    protected OrderedNode head;
     
     @Override
     public Iterator<S> iterator() {

@@ -7,6 +7,11 @@
  *
  * @author guetar
  */
-public class OrderedMap {
+public class OrderedMap<S extends Shorter,T extends Node> extends OrderedSet<S>{
+    
+    @Override
+    public MapIterator<S,T> iterator() {
+        return new MapIterator<S,T>(head);
+    }
     
 }
