@@ -28,7 +28,7 @@ public class Node<S> {
             next.setPrev(this);
         }
     }
-
+  
     public boolean hasNext() {
         return (next != null);
     }

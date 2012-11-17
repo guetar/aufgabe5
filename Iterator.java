@@ -3,7 +3,7 @@
  * @author steff
  */
 public class Iterator<S> implements java.util.Iterator<S> {
-    private Node<S> pos;
+    protected Node<S> pos;
     
     public Iterator (Node<S> head) {
         pos = head;
