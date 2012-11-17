@@ -16,7 +16,7 @@ public class OrderedSet<S extends Shorter> extends Set {
         if(head == null) {
             head = new OrderedNode(s);
         } else if(s.shorter(head.getElem())) {
-            OrderedNode helper = new OrderedNode(head.getElem());
+            OrderedNode helper = head;
             head = new OrderedNode(s);
             head.setNext(helper);
             helper.setPrev(head);

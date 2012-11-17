@@ -33,20 +33,20 @@ public class Node<S> {
         return (next != null);
     }
 
+    public void setNext(Node<S> nextN) {
+        next = nextN;
+    }
+    
     public Node<S> getNext() {
         return next;
     }
 
-    public void setNext(Node<S> nextN) {
-        next = nextN;
+    public void setPrev(Node<S> prevN) {
+        prev = prevN;
     }
 
     public Node<S> getPrev() {
         return prev;
-    }
-
-    private void setPrev(Node<S> prevN) {
-        prev = prevN;
     }
 
     public S getElem() {

@@ -11,7 +11,7 @@ public class Iterator<S> implements java.util.Iterator<S> {
 
     @Override
     public boolean hasNext() {
-        return pos != null;
+        return pos!= null;
     }
 
     @Override
@@ -26,10 +26,20 @@ public class Iterator<S> implements java.util.Iterator<S> {
 
     @Override
     public void remove() {
-        Node<S> next = pos.getNext();
-        Node<S> prev = pos.getPrev();
-        if (next != null && prev != null) {
-            
+        if (pos != null) {
+            Node<S> next = pos.getNext();
+            Node<S> prev = pos.getPrev();
+            if (next != null && prev != null) {
+                next.setPrev(prev);
+                prev.setNext(next);
+                pos = next;
+            }
+            else if(next != null && prev == null) {
+                pos = next;
+            }
+            else if(next == null) {
+                pos = null;
+            }
         }
     }
 }
