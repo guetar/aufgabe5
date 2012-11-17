@@ -29,13 +29,16 @@ public class Test {
         
         Description blah = new Description("blah");
         Description buhu = new Description("buhuludubudulu");
+        Description bada = new Description("badbu!");
         Description baeh = new Description("Ich bin ein Poltergeist!");
         
         OrderedSet oSet = new OrderedSet();
         oSet.insert(blah);
         oSet.insert(buhu);
+        oSet.insert(bada);
         oSet.insert(baeh);
         Iterator is = oSet.iterator();
+        System.out.println(is.next());
         System.out.println(is.next());
         System.out.println(is.next());
         System.out.println(is.next());
