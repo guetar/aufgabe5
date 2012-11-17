@@ -27,4 +27,14 @@ public class CompositeTime<S extends CompositeTime> extends ElapsedTime {
         }
         return s;
     }
+    
+    //NB: return min(times)
+    public double getShortestTime() {
+        double min = Double.MAX_VALUE;
+        for (double time : times) {
+            if(time<min)
+                min=time;
+        }
+        return min;
+    }
 }

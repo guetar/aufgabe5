@@ -33,6 +33,7 @@ public class Test {
         
         Description blah = new Description("blah");
         Description buhu = new Description("buhuludubudulu");
+        Description bada = new Description("badbu!");
         Description baeh = new Description("Ich bin ein Poltergeist!");
         Description haha = new Description("hahahahahahahahahahha");
         Description buuh = new Description("buhhhhhh");
