@@ -3,7 +3,7 @@
  *
  * @author Matthias
  */
-public class MapIterator<S, T extends Node> extends Iterator<S> {
+public class MapIterator<S, T> extends Iterator<S> {
 
     private Node<T> pos;
 

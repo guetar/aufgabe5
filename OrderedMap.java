@@ -7,7 +7,7 @@
  *
  * @author guetar
  */
-public class OrderedMap<S extends Shorter<S>,T extends Node> extends OrderedSet<S>{
+public class OrderedMap<S extends Shorter<S>,T> extends OrderedSet<S>{
     
     @Override
     public MapIterator<S,T> iterator() {
