@@ -18,7 +18,7 @@ public class Description implements Shorter<Description> {
 
     //NB: return linecount of text
     public int getLineCount() {
-        String[] lines = text.split(String.valueOf(Character.LINE_SEPARATOR));
+        String[] lines = text.split(String.valueOf('\n'));
         return Math.max(1, lines.length);
     }
 
