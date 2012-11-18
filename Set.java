@@ -14,7 +14,7 @@ public class Set<S> implements Iterable<S> {
 
     public void insert(S s) {
         if (head == null) {
-            head = new Node(s);
+            head = new Node<S>(s);
         } else {
             head.insert(s);
         }

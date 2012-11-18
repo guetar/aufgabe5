@@ -24,7 +24,7 @@ public class Node<S> {
         if (next != null) {
             next.insert(elemIns);
         } else {
-            next = new Node(elemIns);
+            next = new Node<S>(elemIns);
             next.setPrev(this);
         }
     }

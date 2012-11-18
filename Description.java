@@ -3,7 +3,7 @@
  *
  * @author guetar
  */
-public class Description<S extends Description> implements Shorter<S> {
+public class Description implements Shorter<Description> {
 
     private String text;
 
@@ -12,7 +12,7 @@ public class Description<S extends Description> implements Shorter<S> {
     }
 
     @Override
-    public boolean shorter(S s) {
+    public boolean shorter(Description s) {
         return text.length() < s.toString().length();
     }
 

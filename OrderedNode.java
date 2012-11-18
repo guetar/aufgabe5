@@ -3,7 +3,7 @@
  *
  * @author guetar
  */
-public class OrderedNode<S extends Shorter> extends Node<S> {
+public class OrderedNode<S extends Shorter<S>> extends Node<S> {
     
     private S elem;
     private OrderedNode<S> next;
@@ -14,7 +14,7 @@ public class OrderedNode<S extends Shorter> extends Node<S> {
     }
     
     @Override
-    public OrderedNode getNext() {
+    public OrderedNode<S> getNext() {
         return next;
     }
     
@@ -22,7 +22,7 @@ public class OrderedNode<S extends Shorter> extends Node<S> {
         this.next = nextN;
     }
     
-    public OrderedNode getPrev() {
+    public OrderedNode<S> getPrev() {
         return prev;
     }
     
@@ -41,13 +41,13 @@ public class OrderedNode<S extends Shorter> extends Node<S> {
                 next.insert(elemIns);
             } else {
                 OrderedNode<S> helper = next;
-                next = new OrderedNode(elemIns);
+                next = new OrderedNode<S>(elemIns);
                 next.setPrev(this);
                 next.setNext(helper);
                 helper.setPrev(next);
             }
         } else {
-            next = new OrderedNode(elemIns);
+            next = new OrderedNode<S>(elemIns);
             next.setPrev(this);
         }
     }

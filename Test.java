@@ -18,7 +18,7 @@ public class Test {
         Character c = 'c';
         String d = "d";
         
-        Set set = new Set();
+        Set<Object> set = new Set<Object>();
         set.insert(a);
         set.insert(b);
         set.insert(c);
@@ -39,7 +39,7 @@ public class Test {
         Description d6 = new Description("666666");
         
         
-        OrderedSet oSet = new OrderedSet();
+        OrderedSet<Description> oSet = new OrderedSet<Description>();
         
         oSet.insert(d4);
         oSet.insert(d2);

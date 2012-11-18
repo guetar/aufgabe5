@@ -3,7 +3,7 @@
  *
  * @author guetar
  */
-public class OrderedSet<S extends Shorter> extends Set {
+public class OrderedSet<S extends Shorter<S>> extends Set {
     
     protected OrderedNode<S> head;
     
@@ -14,10 +14,10 @@ public class OrderedSet<S extends Shorter> extends Set {
     
     public void insert(S s) {
         if(head == null) {
-            head = new OrderedNode(s);
+            head = new OrderedNode<S>(s);
         } else if(s.shorter(head.getElem())) {
-            OrderedNode helper = head;
-            head = new OrderedNode(s);
+            OrderedNode<S> helper = head;
+            head = new OrderedNode<S>(s);
             head.setNext(helper);
             helper.setPrev(head);
         } else {
