@@ -19,4 +19,8 @@ public class Set<S> implements Iterable<S> {
             head.insert(s);
         }
     }
+    
+    public int length() {
+        return 1;
+    }
 }

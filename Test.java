@@ -80,7 +80,7 @@ public class Test {
     //und schreiben Sie jeweils den groeßten Messwert (fuer Elemente) bzw. die 
     //kuerzeste Einzelzeit (für Objekte, auf die Elemente verweisen) in die 
     //Standard-Ausgabe. Testen Sie Aenderungen aehnlich wie bei Punkt 1. 
-        OrderedMap<MeanElapsedTime,CompositeTime> om=new OrderedMap<MeanElapsedTime,CompositeTime>();
+//        OrderedMap<MeanElapsedTime,CompositeTime> om=new OrderedMap<MeanElapsedTime,CompositeTime>();
 
         
         
