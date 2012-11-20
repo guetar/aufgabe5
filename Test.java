@@ -13,9 +13,9 @@ public class Test {
     
     public static void main(String[] args) {
         
-        System.out.println("–––––––––––––––––––––––––––––––––––");
+        System.out.println("-----------------------------------");
         System.out.println("Test of Set:");
-        System.out.println("–––––––––––––––––––––––––––––––––––");
+        System.out.println("-----------------------------------");
         
         String a = "a";
         Integer b = 2;
@@ -41,9 +41,9 @@ public class Test {
         //Diesen Vorgang koennen Sie mit unterschiedlichen Aenderungen so oft 
         //wiederholen, wie es Ihnen als noetig erscheint.
         
-        System.out.println("–––––––––––––––––––––––––––––––––––");
+        System.out.println("-----------------------------------");
         System.out.println("Test of OrderedSet mit Description:");
-        System.out.println("–––––––––––––––––––––––––––––––––––");
+        System.out.println("-----------------------------------");
         
         Description d1 = new Description("1");
         Description d2 = new Description("22");
@@ -66,9 +66,9 @@ public class Test {
             Description des=id.next();
             System.out.println(des);
         }
-        System.out.println("–––––––––––––––––––––––––––––––––––");
+        System.out.println("-----------------------------------");
         System.out.println("Entferne 1. und 4. Element:");
-        System.out.println("–––––––––––––––––––––––––––––––––––");
+        System.out.println("-----------------------------------");
         
         id = oSet.iterator();
         //Entferne 1. und 4. Element
@@ -84,9 +84,9 @@ public class Test {
             System.out.println(des);
         }
         
-        System.out.println("–––––––––––––––––––––––––––––––––––");
+        System.out.println("-----------------------------------");
         System.out.println("Test of OrderedSet mit ElapsedTime:");
-        System.out.println("–––––––––––––––––––––––––––––––––––");
+        System.out.println("-----------------------------------");
         
         ElapsedTime t1 = new ElapsedTime();
         t1.setTime(10, 2, 40);
@@ -161,9 +161,6 @@ public class Test {
         oMap.insert(m3);
         oMap.insert(c1);
         oMap.insert(c2);
-        
-        
-        
         
 //        Das geht nicht (found Object). ist diese funktionalitaet erfordert??
 //        while (!is.hasNext()) {
