@@ -64,7 +64,7 @@ public class Test {
         Iterator<Description> id = oSet.iterator();
         while(id.hasNext()){
             Description des=id.next();
-            System.out.println(des.getLineCount() + " Zeile(n):"+des);
+            System.out.println(des);
         }
         System.out.println("–––––––––––––––––––––––––––––––––––");
         System.out.println("Entferne 1. und 4. Element:");
@@ -81,7 +81,7 @@ public class Test {
         id = oSet.iterator();
         while (id.hasNext()) {
             Description des = id.next();
-            System.out.println(des.getLineCount() + " Zeile(n):" + des);
+            System.out.println(des);
         }
         
         System.out.println("–––––––––––––––––––––––––––––––––––");
@@ -110,7 +110,7 @@ public class Test {
         Iterator<ElapsedTime> im = tSet.iterator();
         while (im.hasNext()) {
             ElapsedTime m = im.next();
-            System.out.println("1 Zeite(n):" + m);
+            System.out.println(m);
         }
         
         //2. Erzeugen Sie eine Instanz von OrderedMap, deren Elemente vom Typ 
@@ -150,7 +150,19 @@ public class Test {
         times2[2] = 08.30;
         CompositeTime c2 = new CompositeTime(times2);
         
-        oMap.insert()
+        double [] times3 = new double[3];
+        times3[0] = 08.30;
+        times3[1] = 09.30;
+        times3[2] = 10.30;
+        CompositeTime c3 = new CompositeTime(times3);
+        
+        oMap.insert(m1);
+        oMap.insert(m2);
+        oMap.insert(m3);
+        oMap.insert(c1);
+        oMap.insert(c2);
+        
+        
         
         
 //        Das geht nicht (found Object). ist diese funktionalitaet erfordert??

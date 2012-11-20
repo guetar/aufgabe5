@@ -32,6 +32,10 @@ public class ElapsedTime implements Shorter<ElapsedTime> {
         return time;
     }
     
+    public int count() {
+        return 1;
+    }
+    
     @Override
     public String toString() {
         return getHour() + ":" + getMinutes() + ":" + getSeconds();

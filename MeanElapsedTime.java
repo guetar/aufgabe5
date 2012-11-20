@@ -25,6 +25,7 @@ public class MeanElapsedTime extends ElapsedTime {
     }
 
     //NB: return count(set)
+    @Override
     public int count() {
         Iterator<Double> it = set.iterator();
         int count = 0;
@@ -47,7 +48,6 @@ public class MeanElapsedTime extends ElapsedTime {
 
         }
         return max;
-
     }
 
     //NB: return avg(set)

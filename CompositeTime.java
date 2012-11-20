@@ -15,6 +15,7 @@ public class CompositeTime extends ElapsedTime {
         return sum() < s.sum();
     }
     
+    @Override
     public int count() {
         return times.length;
     }
