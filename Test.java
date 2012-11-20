@@ -114,11 +114,11 @@ public class Test {
         }
         
         //2. Erzeugen Sie eine Instanz von OrderedMap, deren Elemente vom Typ 
-        //MeanElapsedTime sind und die auf Objekte vom Typ CompositeTime verweisen – 
-        //nicht sehr sinnvoll, aber gut zum Testen geeignet. Fügen Sie einige Elemente 
-        //und damit verbundene Objekte ein, lesen Sie alles über die Iteratoren aus, 
-        //und schreiben Sie jeweils den groeßten Messwert (fuer Elemente) bzw. die 
-        //kuerzeste Einzelzeit (für Objekte, auf die Elemente verweisen) in die 
+        //MeanElapsedTime sind und die auf Objekte vom Typ CompositeTime verweisen - 
+        //nicht sehr sinnvoll, aber gut zum Testen geeignet. Fuegen Sie einige Elemente 
+        //und damit verbundene Objekte ein, lesen Sie alles ueber die Iteratoren aus, 
+        //und schreiben Sie jeweils den groessten Messwert (fuer Elemente) bzw. die 
+        //kuerzeste Einzelzeit (fuer Objekte, auf die Elemente verweisen) in die 
         //Standard-Ausgabe. Testen Sie Aenderungen aehnlich wie bei Punkt 1.
         
         OrderedMap<ElapsedTime, ElapsedTime> oMap = new OrderedMap<ElapsedTime, ElapsedTime>();
@@ -161,10 +161,5 @@ public class Test {
         oMap.insert(m3);
         oMap.insert(c1);
         oMap.insert(c2);
-        
-//        Das geht nicht (found Object). ist diese funktionalitaet erfordert??
-//        while (!is.hasNext()) {
-//            Description tmp = it.next();
-//        }
     }
 }
