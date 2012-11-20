@@ -21,6 +21,7 @@ public class OrderedNode<S extends Shorter<S>> extends Node<S> {
         this.next = nextN;
     }
     
+    @Override
     public OrderedNode<S> getPrev() {
         return prev;
     }
