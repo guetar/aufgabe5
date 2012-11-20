@@ -3,12 +3,12 @@
  *
  * @author guetar
  */
-public class ElapsedTime<S extends ElapsedTime> implements Shorter<S> {
+public class ElapsedTime implements Shorter<ElapsedTime> {
 
     private int time;
 
     @Override
-    public boolean shorter(S s) {
+    public boolean shorter(ElapsedTime s) {
         return time < s.getTime();
     }
     
@@ -30,6 +30,10 @@ public class ElapsedTime<S extends ElapsedTime> implements Shorter<S> {
     
     public int getTime() {
         return time;
+    }
+    
+    public int count() {
+        return 1;
     }
     
     @Override

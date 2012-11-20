@@ -3,7 +3,7 @@
  *
  * @author guetar
  */
-public class CompositeTime extends ElapsedTime<CompositeTime> {
+public class CompositeTime extends ElapsedTime {
     
     private double[] times;
     
@@ -15,6 +15,7 @@ public class CompositeTime extends ElapsedTime<CompositeTime> {
         return sum() < s.sum();
     }
     
+    @Override
     public int count() {
         return times.length;
     }
@@ -36,5 +37,10 @@ public class CompositeTime extends ElapsedTime<CompositeTime> {
                 min=time;
         }
         return min;
+    }
+    
+    @Override
+    public String toString() {
+        return "Shortest Time: " + getShortestTime();
     }
 }
