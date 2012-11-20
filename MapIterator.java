@@ -5,13 +5,13 @@
  */
 public class MapIterator<S, T> extends Iterator<S> {
 
-    private Node<T> pos;
+    private MapNode<S,T> pos;
 
-    public MapIterator(Node<S> head) {
+    public MapIterator(MapNode<S,T> head) {
         super(head);
     }
-
-    public MapElementIterator<T> iterator() {
-        return new MapElementIterator<T>(pos);
+    
+    public Iterator<T> iterator() { 
+        return pos.set.iterator();
     }
 }

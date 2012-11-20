@@ -92,8 +92,24 @@ public class Test {
         //und schreiben Sie jeweils den groeßten Messwert (fuer Elemente) bzw. die 
         //kuerzeste Einzelzeit (für Objekte, auf die Elemente verweisen) in die 
         //Standard-Ausgabe. Testen Sie Aenderungen aehnlich wie bei Punkt 1.
-        
-        OrderedMap<MeanElapsedTime,CompositeTime> om=new OrderedMap<MeanElapsedTime,CompositeTime>();
+
+        OrderedMap<MeanElapsedTime, CompositeTime> om = new OrderedMap<MeanElapsedTime, CompositeTime>();
+        MeanElapsedTime mt1 = new MeanElapsedTime();
+        mt1.add(0.55);
+        mt1.add(23.5);
+        mt1.add(10.0); 
+        om.insert(mt1);
+        MeanElapsedTime mt2 = new MeanElapsedTime();
+        mt2.add(1.55);
+        mt2.add(22.5);
+        mt2.add(10.5);
+        om.insert(mt2);
+        MapIterator<MeanElapsedTime, CompositeTime> im = om.iterator();
+        while (im.hasNext()) {
+            MeanElapsedTime et = im.next();
+            System.out.println("Count: "+et.count()+"avg: "+et.avg()+"max: "+et.max());
+        }        
+
         
 //        Das geht nicht (found Object). ist diese funktionalitaet erfordert??
 //        while (!is.hasNext()) {
