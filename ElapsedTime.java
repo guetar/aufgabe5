@@ -6,14 +6,14 @@
 public class ElapsedTime<S extends ElapsedTime> implements Shorter<S> {
 
     private int time;
+    
+    public ElapsedTime(int h, int m, int s) {
+        this.time = h * 3600 + m * 60 + s;
+    }
 
     @Override
     public boolean shorter(S s) {
         return time < s.getTime();
-    }
-    
-    public void setTime(int h, int m, int s) {
-        time = h * 3600 + m * 60 + s;
     }
 
     public int getSeconds() {

@@ -13,9 +13,9 @@ public class Test {
     
     public static void main(String[] args) {
         
-        System.out.println("––––––––––––––––––––––––––");
+        System.out.println("–––––––––––––––––––––––––––––––––––");
         System.out.println("Test of Set:");
-        System.out.println("––––––––––––––––––––––––––");
+        System.out.println("–––––––––––––––––––––––––––––––––––");
         
         String a = "a";
         Integer b = 2;
@@ -41,9 +41,9 @@ public class Test {
         //Diesen Vorgang koennen Sie mit unterschiedlichen Aenderungen so oft 
         //wiederholen, wie es Ihnen als noetig erscheint.
         
-        System.out.println("––––––––––––––––––––––––––");
-        System.out.println("Test of OrderedSet:");
-        System.out.println("––––––––––––––––––––––––––");
+        System.out.println("–––––––––––––––––––––––––––––––––––");
+        System.out.println("Test of OrderedSet mit Description:");
+        System.out.println("–––––––––––––––––––––––––––––––––––");
         
         Description d1 = new Description("1");
         Description d2 = new Description("22");
@@ -69,7 +69,7 @@ public class Test {
         }
         System.out.println("––––––––––––––––––––––––––");
         System.out.println("Entferne 1. und 4.Element:");
-        System.out.println("––––––––––––––––––––––––––");
+        System.out.println("–––––––––––––––––––––––––––––––––––");
         
         is = oSet.iterator();
         //Entferne 1. und 4. Element
@@ -84,6 +84,14 @@ public class Test {
             Description des = is.next();
             System.out.println(des.getLineCount() + " Zeile(n):" + des);
         }
+        
+        System.out.println("–––––––––––––––––––––––––––––––––––");
+        System.out.println("Test of OrderedSet mit ElapsedTime:");
+        System.out.println("–––––––––––––––––––––––––––––––––––");
+        
+        ElapsedTime t1 = new ElapsedTime(16, 28, 12);
+        ElapsedTime t2 = new ElapsedTime(4, 28, 12);
+        ElapsedTime t3 = new ElapsedTime(2, 28, 12);
         
         //2. Erzeugen Sie eine Instanz von OrderedMap, deren Elemente vom Typ 
         //MeanElapsedTime sind und die auf Objekte vom Typ CompositeTime verweisen – 
