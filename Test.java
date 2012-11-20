@@ -61,27 +61,26 @@ public class Test {
         oSet.insert(d6);
         oSet.insert(d1);
         
-        Iterator<Description> is = oSet.iterator();     
-        
-        while(is.hasNext()){
-            Description des=is.next();
-            System.out.println(des.getLineCount()+" Zeile(n):"+des);
+        Iterator<Description> id = oSet.iterator();
+        while(id.hasNext()){
+            Description des=id.next();
+            System.out.println(des.getLineCount() + " Zeile(n):"+des);
         }
-        System.out.println("––––––––––––––––––––––––––");
-        System.out.println("Entferne 1. und 4.Element:");
+        System.out.println("–––––––––––––––––––––––––––––––––––");
+        System.out.println("Entferne 1. und 4. Element:");
         System.out.println("–––––––––––––––––––––––––––––––––––");
         
-        is = oSet.iterator();
+        id = oSet.iterator();
         //Entferne 1. und 4. Element
-        is.remove();       
-        is.next();
-        is.next();
-        is.remove();       
+        id.remove();       
+        id.next();
+        id.next();
+        id.remove();       
 
         //erneute Ausgabe
-        is = oSet.iterator();
-        while (is.hasNext()) {
-            Description des = is.next();
+        id = oSet.iterator();
+        while (id.hasNext()) {
+            Description des = id.next();
             System.out.println(des.getLineCount() + " Zeile(n):" + des);
         }
         
@@ -89,9 +88,30 @@ public class Test {
         System.out.println("Test of OrderedSet mit ElapsedTime:");
         System.out.println("–––––––––––––––––––––––––––––––––––");
         
-        ElapsedTime t1 = new ElapsedTime(16, 28, 12);
-        ElapsedTime t2 = new ElapsedTime(4, 28, 12);
-        ElapsedTime t3 = new ElapsedTime(2, 28, 12);
+        ElapsedTime t1 = new ElapsedTime();
+        t1.setTime(10, 2, 40);
+        ElapsedTime t2 = new ElapsedTime();
+        t2.setTime(6, 4, 10);
+        ElapsedTime t3 = new ElapsedTime();
+        t3.setTime(8, 6, 20);
+        ElapsedTime t4 = new ElapsedTime();
+        t4.setTime(2, 4, 10);
+        ElapsedTime t5 = new ElapsedTime();
+        t5.setTime(4, 6, 20);
+        
+        OrderedSet<ElapsedTime> tSet = new OrderedSet<ElapsedTime>();
+        
+        tSet.insert(t1);
+        tSet.insert(t2);
+        tSet.insert(t3);
+        tSet.insert(t4);
+        tSet.insert(t5);
+        
+        Iterator<ElapsedTime> im = tSet.iterator();
+        while (im.hasNext()) {
+            ElapsedTime m = im.next();
+            System.out.println("1 Zeite(n):" + m);
+        }
         
         //2. Erzeugen Sie eine Instanz von OrderedMap, deren Elemente vom Typ 
         //MeanElapsedTime sind und die auf Objekte vom Typ CompositeTime verweisen – 
@@ -101,7 +121,37 @@ public class Test {
         //kuerzeste Einzelzeit (für Objekte, auf die Elemente verweisen) in die 
         //Standard-Ausgabe. Testen Sie Aenderungen aehnlich wie bei Punkt 1.
         
-        OrderedMap<MeanElapsedTime,CompositeTime> om=new OrderedMap<MeanElapsedTime,CompositeTime>();
+        OrderedMap<ElapsedTime, ElapsedTime> oMap = new OrderedMap<ElapsedTime, ElapsedTime>();
+        
+        MeanElapsedTime m1 = new MeanElapsedTime();
+        m1.add(20.45);
+        m1.add(22.15);
+        m1.add(24.00);
+        
+        MeanElapsedTime m2 = new MeanElapsedTime();
+        m2.add(04.00);
+        m2.add(06.30);
+        m2.add(08.20);
+        
+        MeanElapsedTime m3 = new MeanElapsedTime();
+        m3.add(02.30);
+        m3.add(04.00);
+        m3.add(06.20);
+        
+        double [] times1 = new double[3];
+        times1[0] = 02.30;
+        times1[1] = 03.30;
+        times1[2] = 04.30;
+        CompositeTime c1 = new CompositeTime(times1);
+        
+        double [] times2 = new double[3];
+        times2[0] = 06.30;
+        times2[1] = 07.30;
+        times2[2] = 08.30;
+        CompositeTime c2 = new CompositeTime(times2);
+        
+        oMap.insert()
+        
         
 //        Das geht nicht (found Object). ist diese funktionalitaet erfordert??
 //        while (!is.hasNext()) {

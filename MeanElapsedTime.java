@@ -3,18 +3,17 @@
 // *
 // * @author guetar
 // */
-public class MeanElapsedTime extends ElapsedTime<MeanElapsedTime> {
+public class MeanElapsedTime extends ElapsedTime {
 
     private Set<Double> set;
 
     //NB: set!=null
     public MeanElapsedTime(){
-    set=new Set<Double>();
+        set = new Set<Double>();
     }
     
     //VB: s!=null
     //NB: return this.avg()<s.avg()
-    @Override
     public boolean shorter(MeanElapsedTime s) {
         return avg() < s.avg();
     }
@@ -61,5 +60,10 @@ public class MeanElapsedTime extends ElapsedTime<MeanElapsedTime> {
             sum += it.next();
         }
         return sum / count;
+    }
+    
+    @Override
+    public String toString() {
+        return "Mean Time: " + avg();
     }
 }
