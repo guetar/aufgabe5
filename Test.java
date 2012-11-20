@@ -63,10 +63,11 @@ public class Test {
         
         is = oSet.iterator();
         //Entferne 1. und 4. Element
-        is.remove();
+        is.remove();       
         is.next();
         is.next();
-        is.remove();
+        is.remove();       
+
         //erneute Ausgabe
         is = oSet.iterator();
         while (is.hasNext()) {

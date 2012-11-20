@@ -35,10 +35,12 @@ public class Iterator<S> implements java.util.Iterator<S> {
                 pos = next;
             }
             else if(next != null && prev == null) {
-                pos = next;
+                pos.setElem(next.getElem());
+                pos.setNext(next.getNext());
+                next.getNext().setPrev(pos);
             }
             else if(next == null) {
-                pos = null;
+                pos.setElem(null);
             }
         }
     }

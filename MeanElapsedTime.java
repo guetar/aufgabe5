@@ -9,7 +9,7 @@ public class MeanElapsedTime extends ElapsedTime<MeanElapsedTime> {
 
     //NB: set!=null
     public MeanElapsedTime(){
-    set=new Set();
+    set=new Set<Double>();
     }
     
     //VB: s!=null
