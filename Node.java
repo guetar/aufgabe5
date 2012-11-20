@@ -33,6 +33,10 @@ public class Node<S> {
         return (next != null);
     }
 
+    public void setElem(S elem) {
+        this.elem=elem;
+    }
+        
     public void setNext(Node<S> nextN) {
         next = nextN;
     }

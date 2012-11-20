@@ -3,7 +3,7 @@
  *
  * @author guetar
  */
-public class CompositeTime<S extends CompositeTime> extends ElapsedTime {
+public class CompositeTime extends ElapsedTime<CompositeTime> {
     
     private double[] times;
     
@@ -11,7 +11,7 @@ public class CompositeTime<S extends CompositeTime> extends ElapsedTime {
         this.times = times;
     }
     
-    public boolean shorter(S s) {
+    public boolean shorter(CompositeTime s) {
         return sum() < s.sum();
     }
     

@@ -5,12 +5,11 @@
  */
 public class OrderedNode<S extends Shorter<S>> extends Node<S> {
     
-    private S elem;
     private OrderedNode<S> next;
     private OrderedNode<S> prev;
     
     public OrderedNode(S elem) {
-        this.elem = elem;
+        this.setElem(elem);
     }
     
     @Override
@@ -30,9 +29,6 @@ public class OrderedNode<S extends Shorter<S>> extends Node<S> {
         this.prev = prevN;
     }
     
-    public S getElem() {
-        return elem;
-    }
     
     @Override
     public void insert(S elemIns) {
