@@ -99,7 +99,7 @@ public class Test {
         ElapsedTime t5 = new ElapsedTime();
         t5.setTime(4, 6, 20);
         
-        OrderedSet<ElapsedTime> tSet = new OrderedSet<ElapsedTime>();
+        OrderedSet<ElapsedTime> tSet = new OrderedSet();
         
         tSet.insert(t1);
         tSet.insert(t2);
@@ -121,20 +121,20 @@ public class Test {
         //kuerzeste Einzelzeit (fuer Objekte, auf die Elemente verweisen) in die 
         //Standard-Ausgabe. Testen Sie Aenderungen aehnlich wie bei Punkt 1.
 
-        OrderedMap<MeanElapsedTime, CompositeTime> om = new OrderedMap<MeanElapsedTime, CompositeTime>();
+        OrderedMap<MeanElapsedTime, CompositeTime> oMap = new OrderedMap<MeanElapsedTime, CompositeTime>();
         MeanElapsedTime mt1 = new MeanElapsedTime();
         mt1.add(0.55);
         mt1.add(23.5);
         mt1.add(10.0); 
-        om.insert(mt1);
+        oMap.insert(mt1);
         MeanElapsedTime mt2 = new MeanElapsedTime();
         mt2.add(1.55);
         mt2.add(22.5);
         mt2.add(10.5);
-        om.insert(mt2);
-        MapIterator<MeanElapsedTime, CompositeTime> im = om.iterator();
-        while (im.hasNext()) {
-            MeanElapsedTime et = im.next();
+        oMap.insert(mt2);
+        MapIterator<MeanElapsedTime, CompositeTime> iom = oMap.iterator();
+        while (iom.hasNext()) {
+            MeanElapsedTime et = iom.next();
             System.out.println("Count: "+et.count()+"avg: "+et.avg()+"max: "+et.max());
         }        
 
