@@ -85,21 +85,16 @@ public class Test {
         }
         
         System.out.println("-----------------------------------");
-        System.out.println("Test of OrderedSet mit ElapsedTime:");
+        System.out.println("Test of OrderedSet mit CompositeElapsedTime:");
         System.out.println("-----------------------------------");
         
-        ElapsedTime t1 = new ElapsedTime();
-        t1.setTime(10, 2, 40);
-        ElapsedTime t2 = new ElapsedTime();
-        t2.setTime(6, 4, 10);
-        ElapsedTime t3 = new ElapsedTime();
-        t3.setTime(8, 6, 20);
-        ElapsedTime t4 = new ElapsedTime();
-        t4.setTime(2, 4, 10);
-        ElapsedTime t5 = new ElapsedTime();
-        t5.setTime(4, 6, 20);
+        CompositeTime t1 = new CompositeTime(new double[]{0.5});
+        CompositeTime t2 = new CompositeTime(new double[]{0.5,0.2,0.3});        
+        CompositeTime t3 = new CompositeTime(new double[]{3.0}); 
+        CompositeTime t4 = new CompositeTime(new double[]{0.2,1.5,0.3,8.0,10.0}); 
+        CompositeTime t5 = new CompositeTime(new double[]{50.0,100.0}); 
         
-        OrderedSet<ElapsedTime> tSet = new OrderedSet();
+        OrderedSet<CompositeTime> tSet = new OrderedSet<CompositeTime>();
         
         tSet.insert(t1);
         tSet.insert(t2);
@@ -107,10 +102,10 @@ public class Test {
         tSet.insert(t4);
         tSet.insert(t5);
         
-        Iterator<ElapsedTime> im = tSet.iterator();
+        Iterator<CompositeTime> im = tSet.iterator();
         while (im.hasNext()) {
-            ElapsedTime m = im.next();
-            System.out.println(m);
+            CompositeTime m = im.next();
+            System.out.println(m.sum());
         }
         
         //2. Erzeugen Sie eine Instanz von OrderedMap, deren Elemente vom Typ 

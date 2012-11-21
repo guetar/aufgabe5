@@ -3,15 +3,12 @@
  *
  * @author guetar
  */
-public class ElapsedTime implements Shorter<ElapsedTime> {
+public abstract class ElapsedTime<S> implements Shorter<S> {
 
     private int time;
 
-    @Override
-    public boolean shorter(ElapsedTime s) {
-        return time < s.getTime();
-    }
-    
+
+       
     public void setTime(int h, int m, int s) {
         time = h * 3600 + m * 60 + s;
     }
@@ -32,9 +29,7 @@ public class ElapsedTime implements Shorter<ElapsedTime> {
         return time;
     }
     
-    public int count() {
-        return 1;
-    }
+    public abstract int count();
     
     @Override
     public String toString() {

@@ -3,7 +3,7 @@
  *
  * @author guetar
  */
-public class CompositeTime extends ElapsedTime {
+public class CompositeTime extends ElapsedTime<CompositeTime> {
     
     private double[] times;
     

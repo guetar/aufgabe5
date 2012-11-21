@@ -3,7 +3,7 @@
 // *
 // * @author guetar
 // */
-public class MeanElapsedTime extends ElapsedTime {
+public class MeanElapsedTime extends ElapsedTime<MeanElapsedTime> {
 
     private Set<Double> set;
 
