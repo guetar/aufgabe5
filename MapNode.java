@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
@@ -12,10 +8,12 @@ public class MapNode<S,T> extends Node<S>{
     
     public MapNode(){
     super();
+    set=new Set();
     }
     
     public MapNode(S elem) {
-        setElem(elem);       
+        setElem(elem); 
+        set=new Set();
     }
  
     public void add(T el){

@@ -7,6 +7,10 @@ public class Set<S> implements Iterable<S> {
 
     private Node<S> head;
 
+    public Set(){
+    head=new Node<S>();
+    }
+    
     @Override
     public Iterator<S> iterator() {
         return new Iterator<S>(head);
@@ -19,8 +23,5 @@ public class Set<S> implements Iterable<S> {
             head.insert(s);
         }
     }
-    
-    public int length() {
-        return 1;
-    }
+
 }

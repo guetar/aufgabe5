@@ -9,6 +9,7 @@ public class MapIterator<S, T> extends Iterator<S> {
 
     public MapIterator(MapNode<S,T> head) {
         super(head);
+        pos=head;
     }
     
     public Iterator<T> iterator() { 
