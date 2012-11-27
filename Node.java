@@ -3,57 +3,25 @@
  *
  * @author guetar
  */
-public class Node<S> {
+public class Node<S> extends abstractNode<S> {
 
-    private S elem;
-    private Node<S> next;
-    private Node<S> prev;
 
     public Node() {
-        elem = null;
-        next = null;
-        prev = null;
+        super();
     }
 
     public Node(S elem) {
-        this.elem = elem;
-        this.next = null;
+        super(elem);
     }
 
+    @Override
     public void insert(S elemIns) {
-        if (next != null) {
-            next.insert(elemIns);
+        if (getNext() != null) {
+            getNext().insert(elemIns);
         } else {
-            next = new Node<S>(elemIns);
-            next.setPrev(this);
+            setNext(new Node<S>(elemIns));
+            getNext().setPrev(this);
         }
     }
   
-    public boolean hasNext() {
-        return (next != null);
-    }
-
-    public void setElem(S elem) {
-        this.elem=elem;
-    }
-        
-    public void setNext(Node<S> nextN) {
-        next = nextN;
-    }
-    
-    public Node<S> getNext() {
-        return next;
-    }
-
-    public void setPrev(Node<S> prevN) {
-        prev = prevN;
-    }
-
-    public Node<S> getPrev() {
-        return prev;
-    }
-
-    public S getElem() {
-        return elem;
-    }
 }

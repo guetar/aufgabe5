@@ -3,49 +3,28 @@
  *
  * @author guetar
  */
-public class OrderedNode<S extends Shorter<S>> extends Node<S> {
+public class OrderedNode<S extends Shorter<S>> extends abstractNode<S> {
     
-    private OrderedNode<S> next;
-    private OrderedNode<S> prev;
     
     public OrderedNode(S elem) {
-        this.setElem(elem);
+        super(elem);
     }
-    
-    @Override
-    public OrderedNode<S> getNext() {
-        return next;
-    }
-    
-    public void setNext(OrderedNode<S> nextN) {
-        this.next = nextN;
-    }
-    
-    @Override
-    public OrderedNode<S> getPrev() {
-        return prev;
-    }
-    
-    public void setPrev(OrderedNode<S> prevN) {
-        this.prev = prevN;
-    }
-    
-    
+       
     @Override
     public void insert(S elemIns) {
-        if(next != null) {
-            if(next.getElem() != null && next.getElem().shorter(elemIns)) {
-                next.insert(elemIns);
+        if(getNext() != null) {
+            if(getNext().getElem() != null && getNext().getElem().shorter(elemIns)) {
+                getNext().insert(elemIns);
             } else {
-                OrderedNode<S> helper = next;
-                next = new OrderedNode<S>(elemIns);
-                next.setPrev(this);
-                next.setNext(helper);
-                helper.setPrev(next);
+                abstractNode<S> helper = getNext();
+                setNext(new OrderedNode<S>(elemIns));
+                getNext().setPrev(this);
+                getNext().setNext(helper);
+                helper.setPrev(getNext());
             }
         } else {
-            next = new OrderedNode<S>(elemIns);
-            next.setPrev(this);
+            setNext(new OrderedNode<S>(elemIns));
+            getNext().setPrev(this);
         }
     }
 }
